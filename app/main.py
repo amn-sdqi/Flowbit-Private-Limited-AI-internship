@@ -4,7 +4,7 @@ from typing import Optional
 import uuid
 
 from app.agents.classifier import classify_input
-from app.memory.sqlite_store import read_logs # type: ignore
+from app.memory.sqlite_store import read_logs, save_log # type: ignore
 from app.agents.email_agent import process_email
 from app.agents.json_agent import process_json
 
