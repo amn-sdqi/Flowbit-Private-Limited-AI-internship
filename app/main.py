@@ -41,6 +41,8 @@ async def process_input(
     if not data:
         data = {"text": result["data"]["text"], "note": "No agent matched"}
 
+    save_log(result["log"], data, thread_id)
+
     return {"route": intent + " Agent", "data": data}
 
 
@@ -62,6 +64,8 @@ async def process_json_text(payload: TextInput):
 
     if not data:
         data = {"text": result["data"]["text"], "note": "No agent matched"}
+
+    save_log(result["log"], data, thread_id)
 
     return {"route": intent + " Agent","thread_id":thread_id, "data": data}
 
